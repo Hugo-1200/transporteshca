@@ -7,32 +7,7 @@
     <title>Transportes HCA</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<footer class="footer">
 
-    <div class="footer-contenido">
-
-        <h3>Transportes HCA</h3>
-
-        <p>
-            Transporte de carga consolidada, contenedores, maquinaria y carga especial
-            desde Santiago hacia el sur de Chile.
-        </p>
-
-        <p>📞 +56 9 44523708</p>
-
-        <p>📧 contacto@transporteshca.cl</p>
-
-        <p>📍 Santiago - Chile</p>
-
-        <hr>
-
-        <p class="copyright">
-            © 2026 Transportes HCA. Todos los derechos reservados.
-        </p>
-
-    </div>
-
-</footer>
 <body>
 
 <header>
@@ -54,7 +29,9 @@
         <a href="https://wa.me/56944523708" class="btn-whatsapp" target="_blank">
     Cotizar
 </a>
-
+<div class="menu-toggle">
+    ☰
+</div>
     </nav>
 </header>
 
@@ -288,6 +265,46 @@ contacto@transporteshca.cl
 
 </section>
 </main>
+<section id="cotizacion" class="cotizacion">
+    <div class="contenedor">
+
+        <h2>Solicita tu Cotización</h2>
+        <p>Completa el formulario y nos pondremos en contacto contigo a la brevedad.</p>
+
+        <form class="form-cotizacion">
+
+            <input type="text" name="nombre" placeholder="Nombre completo" required>
+           
+            <input type="text" name="destino" placeholder="Destino">
+
+            <input type="text" name="empresa" placeholder="Empresa (Opcional)">
+
+            <input type="text" name="origen" placeholder="Origen de la carga">
+
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+
+            <input type="tel" name="telefono" placeholder="Teléfono" required>     
+
+            <select name="tipo-carga" required>
+                <option value="">Tipo de carga</option>
+                <option>Contenedor</option>
+                <option>Maquinaria</option>
+                <option>Carga consolidada</option>
+                <option>Carga especial</option>
+                <option>Reciclaje</option>
+            </select>
+
+            <textarea name="mensaje" placeholder="Cuéntanos qué necesitas transportar..." rows="6"></textarea>
+
+            <button type="submit" class="btn-principal">
+                Solicitar Cotización
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
 <footer class="footer">
 
     <div class="footer-contenido">
@@ -304,7 +321,8 @@ contacto@transporteshca.cl
         </p>
 
     </div>
-
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

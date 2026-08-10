@@ -64,6 +64,7 @@ header img{
     align-items:center;
     background:#111;
     padding:5px 40px;
+    position: relative;
 }
 
 .logo img{
@@ -177,6 +178,12 @@ header img{
     line-height: 1.6;
 }
 
+.contenedor{
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+}
+
 .contenedor-servicios{
     display: flex;
     justify-content: center;
@@ -204,7 +211,7 @@ header img{
 
 .card-servicio h3{
     color: #f7c600;
-    font-size: 26px;
+    font-size: 22px;
     text-align: center;
     margin: 20px 15px 10px;
 }
@@ -278,7 +285,7 @@ header img{
 
 .grid-galeria img{
     width: 100%;
-    height: 250px;
+    height: 180px;
     object-fit: cover;
     border-radius: 15px;
     transition: .3s;
@@ -335,6 +342,7 @@ header img{
     background: #1ea851;
     transform: scale(1.05);
 }
+
 .rutas{
     padding:100px 8% 140px;
     text-align:center;
@@ -444,4 +452,307 @@ header img{
 .copyright{
     color:#888;
     font-size:16px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    .contenedor-rutas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+ 
+    .navbar{
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .hero{
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-texto h2{
+        font-size: 38px;
+    }
+
+    .hero-texto p{
+        font-size: 20px;
+    }
+
+    .hero-imagen img{
+        max-width:100%;
+    }
+
+    .contenedor-servicios,
+    .contacto-contenido{
+        flex-direction:column;
+        display:flex;
+        align-items:center;
+    }
+
+    .card-servicio{
+        width:100%;
+        max-width:none;
+    }
+
+    .btn-principal,
+    .btn-whatsapp-grande{
+        width:100%;
+        text-align:center;
+    }
+
+    .footer-contenido{
+        flex-direction:column;
+        text-align:center;
+        gap:20px;
+    }
+
+}
+.menu-toggle{
+    display:block;
+    font-size:32px;
+    color:#fff;
+    cursor:pointer;
+}
+
+@media (max-width:768px){
+
+    .menu{
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#111;
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+        padding:20px 0;
+    }
+
+    .menu.active{
+        display:flex;
+    }
+
+    .menu-toggle{
+        display:block;
+    }
+
+    .btn-whatsapp{
+        display:none;
+    }
+
+    }
+    /* ===== FORMULARIO DE COTIZACIÓN ===== */
+
+.cotizacion{
+    background:#1b1b1b;
+    padding:80px 20px;
+    text-align:center;
+}
+
+.cotizacion h2{
+    color:#f7c600;
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.cotizacion p{
+    color:#ddd;
+    margin-bottom:40px;
+}
+
+.form-cotizacion{
+    max-width:900px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.form-cotizacion input,
+.form-cotizacion select,
+.form-cotizacion textarea{
+    
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+
+.form-cotizacion select {
+    grid-column: 1 / -1;
+}
+
+.form-cotizacion textarea{
+    grid-column:1 / 3;
+    min-height:150px;
+    resize:vertical;
+}
+
+.form-cotizacion button{
+    grid-column:1 / 3;
+    background:#f7c600;
+    color:#111;
+    border:none;
+    padding:18px;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.form-cotizacion button:hover{
+    background:#ffd83d;
+}
+
+.contenedor-servicios{
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    width: 100%;
+    justify-items: center;
+}
+
+.card-servicio{
+    width: 100%;
+    max-width: 340px;
+}
+
+@media (max-width: 768px) {
+    .contenedor-ventajas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+    .ventaja {
+    width: 100%;
+    max-width: none;
+    padding: 25px 15px;
+    box-sizing: border-box;
+}
+
+}
+    .grid-galeria {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        justify-items: center;
+    }
+
+    .grid-galeria img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+}
+
+/* =========================================
+   MEJORA VISUAL - FORMULARIO COTIZACIÓN
+   ========================================= */
+
+.form-cotizacion {
+    max-width: 900px;
+    margin: 0 auto;
+    background: red !important;
+    padding: 30px;
+    background: #111;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.form-cotizacion input,
+.form-cotizacion select,
+.form-cotizacion textarea {
+    background: #fff;
+    color: #222;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 15px;
+    font-size: 16px;
+    transition: 0.25s ease;
+    box-sizing: border-box;
+}
+
+.form-cotizacion input:focus,
+.form-cotizacion select:focus,
+.form-cotizacion textarea:focus {
+    outline: none;
+    border-color: #f7c600;
+    box-shadow: 0 0 0 3px rgba(247,198,0,0.15);
+}
+
+.form-cotizacion input::placeholder,
+.form-cotizacion textarea::placeholder {
+    color: #777;
+}
+
+.form-cotizacion textarea {
+    min-height: 150px;
+}
+
+.form-cotizacion button {
+    background: #f7c600;
+    color: #111;
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.form-cotizacion button:hover {
+    background: #ffd83d;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(247,198,0,0.25);
+}
+
+/* Móvil */
+@media (max-width: 768px) {
+
+    .form-cotizacion {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 18px;
+        box-sizing: border-box;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .form-cotizacion input,
+    .form-cotizacion select,
+    .form-cotizacion textarea,
+    .form-cotizacion button {
+        width: 100%;
+        box-sizing: border-box;
+        grid-column: 1 / -1;
+    }
+
+.form-cotizacion input {
+    grid-column: auto;
+}
+
+.form-cotizacion select,
+.form-cotizacion textarea,
+.form-cotizacion button {
+    grid-column: 1 / -1;
+}    
+    .form-cotizacion textarea {
+        min-height: 130px;
+    }
+
+    .form-cotizacion button {
+        margin-top: 4px;
+    }
 }
