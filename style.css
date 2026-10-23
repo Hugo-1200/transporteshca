@@ -239,8 +239,8 @@ header img{
 
 .contenedor-ventajas{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 30px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .ventaja{
@@ -485,6 +485,7 @@ header img{
 
     .hero-imagen img{
         max-width:100%;
+        object-fit:contain;
     }
 
     .contenedor-servicios,
@@ -628,7 +629,7 @@ header img{
 
 @media (max-width: 768px) {
     .contenedor-ventajas {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
 }
     .ventaja {
@@ -756,3 +757,143 @@ header img{
         margin-top: 4px;
     }
 }
+
+/* ===== AJUSTE VISUAL HCA: FOTOGRAFÍAS UNIFORMES ===== */
+.grid-galeria {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+.grid-galeria img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid rgba(247, 198, 0, 0.18);
+    border-radius: 12px;
+    background: #1a1a1a;
+    box-shadow: 0 8px 22px rgba(0,0,0,.24);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+.grid-galeria img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 26px rgba(0,0,0,.38);
+}
+.hero-imagen img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    object-position: center;
+    background: #181818;
+}
+@media (max-width: 760px) {
+    .grid-galeria { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .grid-galeria img { border-radius: 9px; }
+}
+@media (max-width: 420px) {
+    .grid-galeria { grid-template-columns: 1fr; }
+}
+
+
+/* Ajustes solicitados por Hugo: mostrar el camión completo y ordenar ventajas en 3 x 2 */
+.hero-imagen img {
+    object-fit: contain;
+    object-position: center;
+    background: #181818;
+}
+.contenedor-ventajas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+@media (max-width: 768px) {
+    .contenedor-ventajas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+}
+@media (max-width: 480px) {
+    .contenedor-ventajas { grid-template-columns: 1fr; }
+}
+
+/* ===== PRESENTACION CORPORATIVA HCA - PRUEBA V2 ===== */
+:root { --hca-yellow: #f7c600; --hca-panel: #1b1b1b; }
+body { line-height: 1.55; }
+.navbar { min-height: 96px; padding: 8px clamp(18px, 4vw, 54px); gap: 22px; border-bottom: 1px solid rgba(247,198,0,.24); }
+.logo img { width: 210px; height: 96px; object-fit: contain; margin: 0; }
+.menu { gap: clamp(12px, 2vw, 28px); }
+.menu a { font-size: 15px; transition: color .2s ease; }
+.btn-whatsapp { white-space: nowrap; }
+.hero { max-width: 1440px; margin: 0 auto; gap: clamp(28px, 4vw, 60px); padding: 54px clamp(22px, 5vw, 72px); min-height: 520px; }
+.hero-imagen { min-width: 0; }
+.hero-imagen img { max-width: 680px; width: 100%; aspect-ratio: 4/3; object-fit: contain; border: 1px solid rgba(247,198,0,.2); background: #0a0a0a; }
+.hero-texto { max-width: 570px; }
+.hero-texto h2 { font-size: clamp(34px, 3.4vw, 48px); line-height: 1.12; letter-spacing: -.025em; }
+.hero-texto p { font-size: clamp(18px, 1.5vw, 21px); line-height: 1.65; color: #ededed; }
+.btn-principal { font-size: 18px; padding: 16px 27px; transition: transform .2s ease, box-shadow .2s ease; }
+.btn-principal:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(247,198,0,.25); }
+.franja-confianza { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; max-width:1300px; margin:0 auto; padding:0 clamp(20px,5vw,70px) 54px; }
+.franja-confianza div { display:flex; align-items:center; justify-content:center; gap:10px; padding:17px 12px; border:1px solid #333; border-radius:12px; background:linear-gradient(145deg,#1c1c1c,#111); }
+.franja-confianza span { font-size:25px; }
+.franja-confianza strong { font-size:15px; color:#f4f4f4; }
+.cta-empresas { max-width:1300px; margin:0 auto 20px; padding:36px clamp(22px,5vw,60px); display:flex; align-items:center; justify-content:space-between; gap:32px; border:1px solid rgba(247,198,0,.28); border-radius:18px; background:radial-gradient(ellipse at top right,rgba(247,198,0,.10),transparent 55%),#171717; }
+.cta-empresas-texto { max-width:760px; text-align:left; }
+.cta-empresas .eyebrow { color:var(--hca-yellow); font-size:12px; font-weight:800; letter-spacing:.14em; margin-bottom:8px; }
+.cta-empresas h2 { font-size:clamp(25px,3vw,36px); margin-bottom:10px; line-height:1.2; }
+.cta-empresas p:not(.eyebrow) { font-size:17px; line-height:1.65; color:#d6d6d6; }
+.servicios,.galeria,.ventajas,.contacto,.rutas { padding-top:72px; padding-bottom:72px; }
+.titulo-seccion h2,.ventajas h2,.cotizacion h2 { font-size:clamp(29px,3vw,38px); }
+.titulo-seccion p { font-size:18px; }
+.contenedor-servicios { gap:20px; }
+.card-servicio { padding-top:8px; border:1px solid #2d2d2d; }
+.card-servicio h3 { font-size:20px; }
+.card-servicio p { font-size:16px; }
+.ventaja { border:1px solid #2d2d2d; }
+.ventaja h3 { font-size:21px; }
+.ventaja p { font-size:16px; }
+.grid-galeria { gap:18px; }
+.grid-galeria img { aspect-ratio:1/1; object-fit:cover; }
+.ruta { border:1px solid #2d2d2d; font-size:17px; }
+.info-contacto p { font-size:18px; }
+.form-cotizacion { gap:16px; }
+.form-cotizacion input,.form-cotizacion select,.form-cotizacion textarea { background:#f7f7f7; color:#171717; }
+.form-cotizacion input:focus,.form-cotizacion select:focus,.form-cotizacion textarea:focus { outline:2px solid var(--hca-yellow); outline-offset:2px; }
+.whatsapp-flotante { position:fixed; z-index:1000; right:22px; bottom:22px; display:flex; align-items:center; gap:9px; padding:14px 18px; border-radius:999px; background:#20c766; color:#fff; text-decoration:none; font-size:15px; font-weight:800; box-shadow:0 8px 26px rgba(0,0,0,.4); transition:transform .2s ease; }
+.whatsapp-flotante:hover { transform:translateY(-3px); }
+.whatsapp-flotante span { font-size:18px; }
+@media (max-width:900px) {
+ .navbar { flex-direction:row; flex-wrap:wrap; padding:8px 18px; }
+ .logo img { width:170px; height:76px; }
+ .menu { gap:14px; }
+ .menu a { font-size:14px; }
+ .hero { padding:38px 24px; gap:28px; }
+ .franja-confianza { padding-left:24px; padding-right:24px; grid-template-columns:repeat(2,minmax(0,1fr)); }
+ .cta-empresas { margin-left:20px; margin-right:20px; }
+}
+@media (max-width:680px) {
+ .navbar { justify-content:space-between; }
+ .menu { top:100%; z-index:100; }
+ .hero { flex-direction:column; min-height:0; padding:30px 20px 42px; gap:26px; }
+ .hero-imagen { width:100%; }
+ .hero-imagen img { max-width:100%; aspect-ratio:4/3; }
+ .hero-texto { max-width:100%; }
+ .hero-texto h2 { font-size:34px; }
+ .hero-texto p { font-size:17px; }
+ .btn-principal { font-size:17px; padding:15px 20px; }
+ .franja-confianza { padding:0 20px 38px; gap:10px; }
+ .franja-confianza div { flex-direction:column; text-align:center; gap:5px; padding:14px 8px; }
+ .franja-confianza strong { font-size:13px; }
+ .cta-empresas { flex-direction:column; align-items:stretch; padding:25px 20px; margin:0 16px 10px; }
+ .cta-empresas-texto { text-align:center; }
+ .cta-empresas p:not(.eyebrow) { font-size:16px; }
+ .servicios,.galeria,.ventajas,.contacto,.rutas { padding:52px 20px; }
+ .contenedor-ventajas { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+ .ventaja { padding:22px 12px; }
+ .ventaja span { font-size:35px; }
+ .ventaja h3 { font-size:17px; margin:12px 0 8px; }
+ .ventaja p { font-size:14px; }
+ .grid-galeria { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+ .form-cotizacion { grid-template-columns:1fr; }
+ .form-cotizacion select,.form-cotizacion textarea,.form-cotizacion button { grid-column:1; }
+ .whatsapp-flotante { right:14px; bottom:14px; padding:12px 15px; }
+}
+@media (prefers-reduced-motion: reduce) { *,*::before,*::after { scroll-behavior:auto!important; transition:none!important; } }
